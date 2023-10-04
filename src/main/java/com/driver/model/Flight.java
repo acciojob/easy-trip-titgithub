@@ -1,23 +1,19 @@
 package com.driver.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class Flight {
 
-    private int flightId; //This is a unique key for a flight
-
+    private int flightId; // This is a unique key for a flight
     private City fromCity;
-
     private City toCity;
-
     private int maxCapacity;
-
     private Date flightDate;
-
     private double duration;
+    private List<Integer> bookings; // List of passengerIds who have booked this flight
 
     public Flight() {
-
     }
 
     public Flight(int flightId, City fromCity, City toCity, int maxCapacity, Date flightDate, double duration) {
@@ -77,4 +73,11 @@ public class Flight {
         this.duration = duration;
     }
 
+    public List<Integer> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Integer> bookings) {
+        this.bookings = bookings;
+    }
 }
